@@ -1,0 +1,77 @@
+*{
+  font-family: elephant
+}
+body {
+     background-image: url("images/terrain.jpg");
+     background-size: cover;
+}
+
+/* MENU NAVIGATION */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: none ;/
+    width: 100%;
+
+}
+
+li {
+    float: left
+}
+
+li a {
+    display: block;
+    color: #FE2EF7;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+li {
+    border-right: 1px solid #bbb;/*#bbb*/
+
+}
+
+li:last-child {
+    border-right: none;
+    border-left: 1px solid #bbb;
+    background-color: black;
+}
+
+
+
+/*Block*/
+
+main {
+	width: 1000px;
+	height: 625px;
+	margin:auto;
+	font-family: Arial;
+}
+
+aside {
+	width: 450px;
+	height:625px;
+	float: right;
+	margin:10px;
+  border: 10px #FE2EF7 groove;
+  color: #FE2EF7;
+  text-align: left;
+}
+
+section {
+	width:450px;
+	height:625px;
+	float: left;
+	margin-top: 10px;
+	margin-left:10px;
+  border: 10px #FE2EF7 groove;
+  color: #FE2EF7;
+
+}

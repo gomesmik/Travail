@@ -1,0 +1,72 @@
+*{
+  font-family: elephant;
+  color: #FE2EF7;
+}
+body {
+  background-image: url("images/modif.jpg");
+  background-size: cover;
+  margin: auto;
+}
+
+h1{
+  text-align: center;
+}
+
+/* MENU NAVIGATION */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: none ;
+    width: 100%;
+
+}
+
+li {
+    float: left
+}
+
+li a {
+    display: block;
+    color: #FE2EF7;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+li {
+    border-right: 1px solid #bbb;/*#bbb*/
+
+}
+
+li:last-child {
+    border-right: none;
+    border-left: 1px solid #bbb;
+    background-color: black;
+}
+
+table{
+  margin: auto;
+  border-spacing: 20px 28px;
+
+}
+td {
+  text-align: left;
+  font-size: 20px;
+  font-style: bold;
+}
+a{
+text-decoration: none;
+}
+input{
+  color:black;
+}
+
+select{
+  color:black;
+}

@@ -1,0 +1,76 @@
+body {
+     background-image: url("images/connexion.png");
+     background-size: cover;
+}
+
+/* MENU NAVIGATION */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black ;/*#333*/
+    width: 100%;
+
+}
+
+li {
+    float: left
+}
+
+li a {
+    display: block;
+    color: #FE2EF7;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+li {
+    border-right: 1px solid #bbb;/*#bbb*/
+
+}
+
+li:last-child {
+    border-right: none;
+    border-left: 1px solid #bbb;
+    background-color: black;
+}
+
+
+/*Block*/
+
+main {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+	font-family: Arial;
+  align:center;
+}
+section {
+	width:500px;
+	height:200px;
+  border: 10px #FE2EF7 groove;
+  color: #FE2EF7;
+
+
+}
+article{
+  width: 500px;
+  height: 150px;
+  border: 10px #FE2EF7 groove;
+  color: #FE2EF7;
+  text-align: center;
+}
+a{
+  color: #FE2EF7;
+  text-decoration: none;
+}
+
+table {
+  align:center;
+}

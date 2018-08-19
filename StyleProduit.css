@@ -1,0 +1,150 @@
+*{
+  font-family: elephant;
+}
+
+body {
+     background-image: url("images/adri.jpg");
+     background-size: cover;
+     color: #FE2EF7;
+     text-align: center;
+     font-family: Elephant;
+}
+
+/* MENU NAVIGATION */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: none ;/*#333*/
+    width: 100%;
+    font-size: 20px;
+    font-family: Elephant;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #FE2EF7;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+li {
+    border-right: 1px solid #bbb;/*#bbb*/
+
+}
+
+li:last-child {
+    border-right: none;
+    border-left: 1px solid #bbb;
+    background-color: black;
+}
+
+a{
+  text-decoration: none;
+  color:black;
+}
+span{
+font-size: 40px;
+text-decoration: none;
+border-right: 5px solid black;
+border-left: 5px solid black;
+border-top: 5px solid black;
+border-bottom: 5px solid black;
+background-color: #FE2EF7;
+
+}
+
+
+main {
+	width: 1000px;
+	height: 500px;
+	margin:auto;
+	font-family: Arial;
+}
+
+aside {
+	width: 450px;
+	height:450px;
+	float: right;
+	margin:10px;
+  border: 10px #FE2EF7 groove;
+  color: #FE2EF7;
+
+}
+
+section {
+	width:450px;
+	height:450px;
+	float: left;
+	margin-top: 10px;
+	margin-left:10px;
+  border: 10px #FE2EF7 groove;
+  color: #FE2EF7;
+  font-family: Elephant;
+  font-size: 15px;
+
+}
+table{
+  text-align: left;
+  margin : auto;
+  border-right: 5px solid white;
+  border-left: 5px solid white;
+  border-top: 5px solid white;
+  background-color: black;
+}
+
+
+#left {
+    float:left;
+    width:300px;
+    border-right: 5px solid white;
+    border-left: 5px solid white;
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+    margin-left: 150px;
+    margin-top: 150px;
+}
+
+#center {
+    display: inline-block;
+    margin:0 auto;
+    width:300px;
+    border-right: 5px solid white;
+    border-left: 5px solid white;
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+    margin-top: 150px;
+}
+
+#right {
+    float:right;
+    width:300px;
+    border-right: 5px solid white;
+    border-left: 5px solid white;
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+    margin-right: 150px;
+    margin-top: 150px;
+}
+
+.bouton a{
+  display: block;
+	border-radius:12px 0 12px 0;
+	background: #f5f5f5;
+	border:none;
+	color:#555;
+	font:bold 12px Verdana;
+	padding:6px 0 6px 0;
+	border:1px solid #ccc;
+  width: 200px;
+  margin:auto;
