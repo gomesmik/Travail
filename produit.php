@@ -28,20 +28,29 @@ session_start();
   	    ?>
   		</li>
     </ul>
-
+    <div class="heure">
+    <?php
+    $heure = date("H:i");
+    echo $heure;
+    ?>
+    </div>
+    l'heure est venu de choisir ton arme !
   </header>
 
 
 
   <?php
+
   $prm = 1;
   $dxm = 2;
   $txm = 3;
+
     try {
       $bdd = new PDO("mysql:host=localhost;dbname=travail", "root", ""); // Create DB connection
       $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Duplace entry management
       $reponseDeClients = $bdd->query("SELECT * FROM produit WHERE id =  $prm");
       $reponseDeClients->setFetchMode(PDO::FETCH_BOTH);
+
 
       ?>
       <div id="left"> </br><img src="images/crampons.png" alt="Yellow_nike" height="125" width="200"></br>
@@ -76,7 +85,7 @@ session_start();
       ?>
     </br>
       <div class="bouton">
-         <a href="https://www.w3schools.com">shop now</a>
+         <a href="magista.php">shop now</a>
 
       </div>
     </br>
@@ -98,7 +107,7 @@ session_start();
       ?>
     </br>
       <div class="bouton">
-         <a href="https://www.w3schools.com">shop now</a>
+         <a href="tiempo.php">shop now</a>
 
       </div>
     </br>

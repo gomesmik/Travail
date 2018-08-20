@@ -1,6 +1,6 @@
 <?php session_start();
-$_SESSION['hyptaille'] = $_POST;
-$_SESSION['hypquantite'] = $_POST;
+$_SESSION['taille'] = $_POST;
+$_SESSION['quantite'] = $_POST;
 ?>
 
 <!DOCTYPE html>
@@ -36,31 +36,31 @@ $_SESSION['hypquantite'] = $_POST;
 </header>
 <?php
 
-$un = 1;
+$trx = 3;
 $bdd = new PDO("mysql:host=localhost;dbname=travail", "root", ""); // Create DB connection
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Duplace entry management
-$reponseDeClients = $bdd->query("SELECT * FROM produit WHERE id =  $un");
+$reponseDeClients = $bdd->query("SELECT * FROM produit WHERE id =  $trx");
 $reponseDeClients->setFetchMode(PDO::FETCH_BOTH);
 
 while ($donneesDeClients = $reponseDeClients->fetch() ) {
-$_SESSION["hypdescr"] = $donneesDeClients['description'];
-$_SESSION["hypmarque"] = $donneesDeClients['marque'];
-$_SESSION["hypprice"] = $donneesDeClients['prix'];
+$_SESSION["tiempodescr"] = $donneesDeClients['description'];
+$_SESSION["marque"] = $donneesDeClients['marque'];
+$_SESSION["price"] = $donneesDeClients['prix'];
 }
 
 ?>
 
 <div class="bgauche">
-  <img src="images/crampons.png" alt="Yellow_nike" class="Yellow_nike">
+  <img src="images/crampons2.png" alt="Yellow_nike" class="Yellow_nike">
 </div>
 <div class="bdroite">
 </br>
   <fieldset>
     <legend>Nike Tiempo Genio Leather II FG</legend>
 
-    <FORM method="POST" action="panier.php">
+    <FORM method="post" action="panier.php">
       Taille :
-    <SELECT name="hyptaille" size="1" required>
+    <SELECT name="taille" size="1" required>
         <OPTION value="39">39</option>
         <OPTION value="40">40</option>
         <OPTION value="41">41</option>
@@ -68,7 +68,7 @@ $_SESSION["hypprice"] = $donneesDeClients['prix'];
         <OPTION value="43">43</option>
     </SELECT>
     Quantité :
-    <SELECT name="hypquantite" size="1" required>
+    <SELECT name="quantite" size="1" required>
         <OPTION>1</option>
         <OPTION>2</option>
         <OPTION>3</option>

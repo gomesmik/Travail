@@ -58,7 +58,7 @@ $_SESSION["hypprice"] = $donneesDeClients['prix'];
   <fieldset>
     <legend>Nike Tiempo Genio Leather II FG</legend>
 
-    <FORM method="POST" action="panier.php">
+    <FORM method="post" action="panier.php">
       Taille :
     <SELECT name="hyptaille" size="1" required>
         <OPTION value="39">39</option>
