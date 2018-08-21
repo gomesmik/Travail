@@ -1,6 +1,6 @@
 <?php session_start();
-$_SESSION['hyptaille'] = $_POST;
-$_SESSION['hypquantite'] = $_POST;
+/*$_SESSION['hyptaille'] = $_POST;
+$_SESSION['hypquantite'] = $_POST;*/
 ?>
 
 <!DOCTYPE html>
@@ -56,9 +56,9 @@ $_SESSION["magprice"] = $donneesDeClients['prix'];
 <div class="bdroite">
 </br>
   <fieldset>
-    <legend>Nike Tiempo Genio Leather II FG</legend>
+    <legend>Magista Obra FG</legend>
 
-    <FORM method="post" action="panier.php">
+    <FORM method="POST" action="panier.php">
       Taille :
     <SELECT name="magtaille" size="1" required>
         <OPTION value="39">39</option>

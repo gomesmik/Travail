@@ -1,6 +1,6 @@
 <?php session_start();
-$_SESSION['taille'] = $_POST;
-$_SESSION['quantite'] = $_POST;
+/*$_SESSION['taille'] = $_POST;
+$_SESSION['quantite'] = $_POST;*/
 ?>
 
 <!DOCTYPE html>

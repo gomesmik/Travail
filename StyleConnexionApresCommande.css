@@ -1,0 +1,76 @@
+*{
+  font-family: elephant;
+}
+body {
+     background-image: url("images/ApresCommande.jpg");
+     background-size: cover;
+}
+
+/* MENU NAVIGATION */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: none ;
+    width: 100%;
+
+}
+
+li {
+    float: left
+}
+
+li a {
+    display: block;
+    color: #FE2EF7;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+li {
+    border-right: 1px solid #bbb;/*#bbb*/
+
+}
+
+li:last-child {
+    border-right: none;
+    border-left: 1px solid #bbb;
+    background-color: black;
+}
+
+
+footer {
+  background-color: black;
+  color: #FE2EF7;;
+  position: absolute;
+  bottom: 0px;
+  width: 98%;
+  text-align: right;
+}
+
+#left {
+    float:left;
+    width:300px;
+    border-right: 5px solid white;
+    border-left: 5px solid white;
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+    margin-left: 150px;
+    margin-top: 60px;
+}
+#right {
+    float:right;
+    width:300px;
+    border-right: 5px solid white;
+    border-left: 5px solid white;
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+    margin-right: 150px;
+    margin-top: 60px;
+  }
