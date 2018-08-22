@@ -1,5 +1,6 @@
 *{
   font-family: elephant;
+
 }
 
 body {
@@ -80,6 +81,7 @@ aside {
   border: 10px #FE2EF7 groove;
   color: #FE2EF7;
 
+
 }
 
 section {
@@ -104,7 +106,7 @@ table{
   background-color: black;
 }
 
-div{
+div {
   text-decoration: none;
   font-size: 20px;
   font-family: sans-serif;
@@ -112,6 +114,7 @@ div{
   border-left: 5px solid black;
   border-top: 5px solid black;
   border-bottom: 5px solid black;
-   background-color: #FE2EF7;
+  background-color: #FE2EF7;
+  margin-top:10px;
 
 }

@@ -1,0 +1,86 @@
+*{
+  font-family: elephant;
+}
+body {
+     background-image: url("images/foot.jpg");
+     background-size: cover;
+}
+
+/* MENU NAVIGATION */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: none ;
+    width: 100%;
+
+}
+
+li {
+    float: left
+}
+
+li a {
+    display: block;
+    color: #FE2EF7;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+li {
+    border-right: 1px solid #bbb;/*#bbb*/
+
+}
+
+li:last-child {
+    border-right: none;
+    border-left: 1px solid #bbb;
+    background-color: black;
+}
+h1{
+  text-align: center;
+  color: #FE2EF7;
+}
+.Oui a {
+  float: right;
+  margin-top: 100px;
+  margin-right: 250px;
+  display:block;
+	width:100px;
+	height:95px;
+	background:#FE2EF7;
+	box-shadow:2px 2px 8px #aaa;
+	font:bold 15px elephant;
+	border-radius:50%;
+	color:white;
+  text-align: center;
+  text-decoration: none;
+  height: 95px; /* hauteur du parent */
+  line-height: 95px; /* hauteur de ligne (identique) */
+  white-space: nowrap; /* interdiction de passer à la ligne */
+}
+
+.Non a {
+  float: left;
+  margin-left: 250px;
+  margin-top: 100px;
+  display:block;
+	width:100px;
+	height:50px;
+	background:#FE2EF7;
+	box-shadow:2px 2px 8px #aaa;
+	font:bold 15px elephant;
+	border-radius:50%;
+	color:white;
+  text-align: center;
+  text-decoration: none;
+  height: 95px; /* hauteur du parent */
+  line-height: 95px; /* hauteur de ligne (identique) */
+  white-space: nowrap;  interdiction de passer à la ligne */
+}

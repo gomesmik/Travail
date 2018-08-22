@@ -56,10 +56,11 @@
 		try {
 			$bdd = new PDO("mysql:host=localhost;dbname=travail", "root", ""); // Create DB connection
 			$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Duplace entry management
+
+
 			$sql = $bdd->prepare("SELECT Login, MotDePasse FROM client WHERE Login = :uname");
 			$sql->bindParam(':uname', $uname, PDO::PARAM_STR);
 			$sql->execute();
-
 
 			$user = $sql->fetch(PDO::FETCH_ASSOC);
 			if (password_verify($pswrd,$user['MotDePasse'])) { // Check strong encoded password
