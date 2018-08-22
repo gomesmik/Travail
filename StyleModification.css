@@ -70,3 +70,8 @@ input{
 select{
   color:black;
 }
+
+li.pan{
+float: right;
+border-left: 1px solid #bbb;
+}

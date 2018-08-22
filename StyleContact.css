@@ -75,3 +75,8 @@ section {
   color: #FE2EF7;
 
 }
+
+li.pan{
+float: right;
+border-left: 1px solid #bbb;
+}

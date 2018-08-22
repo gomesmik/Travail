@@ -42,6 +42,7 @@ $req = $bdd->prepare("UPDATE client SET Nom = :nam, Prenom = :prenom, Adresse = 
     <li><a href="Index.php">Home</a></li>
     <li><a href="produit.php">Produit</a></li>
     <li><a href="contact.php">Contact</a></li>
+    <li class="pan"><a href="panier.php" style="float:right"><img src="images/panier.png" alt="panier" height="15" width="20"></a></li>
     <li style="float:right">
 			<?php
 	    if(isset($_SESSION['login']))
