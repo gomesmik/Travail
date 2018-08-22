@@ -68,9 +68,9 @@ footer {
 
 }
 #right {
-      padding: 10px;
+    padding: 10px;
     float:right;
-    width:350px;
+    width:500px;
     border-right: 5px solid white;
     border-left: 5px solid white;
     border-top: 5px solid white;
@@ -88,4 +88,42 @@ h3{
 a{
   text-align: center;
   color: #FE2EF7;
+}
+
+.valider a {
+  float: right;
+  margin-top: 30px;
+  margin-right: 150px;
+  display:block;
+	width:180px;
+	height:95px;
+	background:#FE2EF7;
+	box-shadow:2px 2px 8px #aaa;
+	font:bold 15px elephant;
+	border-radius:50%;
+	color:white;
+  text-align: center;
+  text-decoration: none;
+  height: 95px; /* hauteur du parent */
+  line-height: 95px; /* hauteur de ligne (identique) */
+  white-space: nowrap; /* interdiction de passer à la ligne */
+}
+
+.retour a {
+  float: left;
+  margin-left: 150px;
+  margin-top: 30px;
+  display:block;
+	width:180px;
+	height:50px;
+	background:#FE2EF7;
+	box-shadow:2px 2px 8px #aaa;
+	font:bold 15px elephant;
+	border-radius:50%;
+	color:white;
+  text-align: center;
+  text-decoration: none;
+  height: 95px; /* hauteur du parent */
+  line-height: 95px; /* hauteur de ligne (identique) */
+  white-space: nowrap;  interdiction de passer à la ligne */
 }

@@ -49,6 +49,7 @@ $women = "Femme";
 
 			while ($donneesDeClients = $reponseDeClients->fetch() )
 			{
+				$_SESSION["IdClient"] = $donneesDeClients['ID'];
 					if ($men == $donneesDeClients['Sexe']){
 						echo "</br>";
 						echo "<img src='images/Man.png' alt='Homme' title = 'Homme' style='width:200px;height:200px;''>";

@@ -43,6 +43,7 @@ $reponseDeClients = $bdd->query("SELECT * FROM produit WHERE id =  $un");
 $reponseDeClients->setFetchMode(PDO::FETCH_BOTH);
 
 while ($donneesDeClients = $reponseDeClients->fetch() ) {
+$_SESSION["hyperid"] = $donneesDeClients['id'];
 $_SESSION["hypdescr"] = $donneesDeClients['description'];
 $_SESSION["hypmarque"] = $donneesDeClients['marque'];
 $_SESSION["hypprice"] = $donneesDeClients['prix'];

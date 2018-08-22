@@ -137,6 +137,7 @@ else{
               $totalmagista = $prixmagista;
               $totalmagista = number_format($totalmagista, 2);
               $total = $prixhyper + $prixtiempo + $prixmagista;
+              
 
               /*s'il achete tout*/
             if(isset($_SESSION['magtaille'], $_SESSION['magquantite'], $_SESSION['hyptaille'], $_SESSION['hypquantite'], $_SESSION['taille'], $_SESSION['quantite'])){
