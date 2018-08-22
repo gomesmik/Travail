@@ -175,8 +175,24 @@ else{
 
    </tr>
 </table>
-<div class="bouton">
-<a href="ConnexionApresCommande.php">Commander</a>
+<?php
+if(isset($_SESSION['magtaille']) || isset($_SESSION['hyptaille']) || isset($_SESSION['taille'])){
+?>
+  <div class="bouton">
+      <a href="ConnexionApresCommande.php">Commander</a>
 </div>
+<div class="continuer">
+  <a href="produit.php">Continuer les achats</a>
+</div>
+<?php
+}
+else{
+  ?>
+  <div class="continuer1">
+    <a href="produit.php">Commencer vos achats</a>
+  </div>
+  <?php
+}
+?>
 </body>
 </html>

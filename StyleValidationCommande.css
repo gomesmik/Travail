@@ -1,9 +1,9 @@
 *{
   font-family: elephant;
-  color: #FE2EF7
+    color: #FE2EF7;
 }
 body {
-     background-image: url("images/ApresCommande.jpg");
+     background-image: url("images/adri.jpg");
      background-size: cover;
 }
 
@@ -54,72 +54,38 @@ footer {
   width: 98%;
   text-align: right;
 }
-
 #left {
     float:left;
-    width:450px;
+    width:350px;
     border-right: 5px solid white;
     border-left: 5px solid white;
     border-top: 5px solid white;
     border-bottom: 5px solid white;
     margin-left: 150px;
     margin-top: 60px;
-    text-align: center;
-    height: 200px;
+    height: 300px;
+    padding: 10px;
+
 }
 #right {
+      padding: 10px;
     float:right;
-    width:450px;
+    width:350px;
     border-right: 5px solid white;
     border-left: 5px solid white;
     border-top: 5px solid white;
     border-bottom: 5px solid white;
     margin-right: 150px;
     margin-top: 60px;
-    height: 200px;
-  }
-  h3{
-    border-bottom: 2px solid #FE2EF7;
-  }
-  input{
-    color: black;
-    text-align: center;
-  }
-  .bouton a{
-    display: block;
-  	border-radius:12px 0 12px 0;
-  	background: #f5f5f5;
-  	border:none;
-  	color:#555;
-  	font:bold 12px Verdana;
-  	padding:6px 0 6px 0;
-  	border:1px solid #ccc;
-    width: 200px;
-    margin:auto;
-    height: 50px;
-    text-align: center;
-    text-decoration: none;
-    font-family: elephant;
-    font-size: 32.5px;
-  }
+    height: 300px;
+}
+h3{
+  text-align: center;
+  color: #FE2EF7;
+  border-bottom: 3px solid #FE2EF7;
+}
 
-  .annuler a {
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 325px;
-    display:block;
-  	width:180px;
-  	height:50px;
-  	background:#FE2EF7;
-  	box-shadow:2px 2px 8px #aaa;
-  	font:bold 15px elephant;
-  	border-radius:50%;
-  	color:white;
-    text-align: center;
-    text-decoration: none;
-    height: 95px; /* hauteur du parent */
-    line-height: 95px; /* hauteur de ligne (identique) */
-    white-space: nowrap;  interdiction de passer à la ligne */
-  }
-
-  
+a{
+  text-align: center;
+  color: #FE2EF7;
+}

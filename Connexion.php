@@ -59,8 +59,6 @@
     $login = "";
 
 
-
-
 		try {
 			$bdd = new PDO("mysql:host=localhost;dbname=travail", "root", ""); // Create DB connection
 			$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Duplace entry management
@@ -71,17 +69,15 @@
 
 			$user = $sql->fetch(PDO::FETCH_ASSOC);
 			if (password_verify($pswrd,$user['MotDePasse'])) { // Check strong encoded password
-
         $nam = $_POST['login'];
         $_SESSION['login'] = $nam;
-
-				echo "<meta http-equiv='refresh' content='1;url=Bienvenue.php'>";
+        echo "<meta http-equiv='refresh' content='1;url=Bienvenue.php'>";
 				$submt = "Logging in progres...";
 			}
 			else {
         ?>
 
-			<script> alert()</script>
+			<script> alert("mot de passe ou login erroné")</script>
 
       <?php
 			}
