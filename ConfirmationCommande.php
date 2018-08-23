@@ -43,16 +43,11 @@ $_SESSION["IdClient"] = $IdClient;/*PROBLEMMEE*/
 try {
   $bdd = new PDO("mysql:host=localhost;dbname=travail", "root", "");
   $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
   $req = $bdd->prepare('INSERT INTO commande(ID_Client, ID_Produit) VALUES (:IDClient, :IDProduit)');
-
-  $req->execute(array(
-
-      'IDClient' => $idClient,
-
-      'IDProduit' => $IdHypervenom,
-      ));
-
+  $req->execute();
+  $stmt->bindParam(':Adresse', $adresse, PDO::PARAM_STR);
+  $stmt->bindParam(':Telephone', $telephone, PDO::PARAM_INT);
+      
 
   echo 'Le jeu a bien été ajouté !';
 }

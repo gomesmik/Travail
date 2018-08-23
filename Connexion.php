@@ -71,7 +71,7 @@
 			$user = $sql->fetch(PDO::FETCH_ASSOC);
 			if (password_verify($pswrd,$user['MotDePasse'])) { // Check strong encoded password
         $nam = $_POST['login'];
-        $_SESSION['login'] = $nam;
+        $_SESSION['login'] = $nam;// session 
         echo "<meta http-equiv='refresh' content='1;url=Bienvenue.php'>";
 				$submt = "Logging in progres...";
 			}

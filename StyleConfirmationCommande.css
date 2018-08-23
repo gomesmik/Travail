@@ -14,7 +14,7 @@ ul {
     overflow: hidden;
     background-color: none ;
     width: 100%;
-
+    font-size: 15px;
 }
 
 li {

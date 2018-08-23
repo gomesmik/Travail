@@ -87,8 +87,14 @@ $_SESSION["hypprice"] = $donneesDeClients['prix'];
     </br>
     Livraison offerte
   </fieldset>
+<span>
   </br>
-  </br>
+
+  <?php
+
+echo $_SESSION['hypprice'] . " CHF";
+  ?>
+</span>
 
 
 </div>

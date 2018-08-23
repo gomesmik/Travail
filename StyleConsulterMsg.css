@@ -1,13 +1,12 @@
 *{
-  font-family: Elephant;
+  font-family: elephant;
 }
-body{
-  background-image: url("images/foot.jpg");
-  background-size: cover;
-  text-align: center;
-  color: #FE2EF7;
+body {
+     background-image: url("images/Fondprod.jpg");
+     background-size: cover;
 }
 
+/* MENU NAVIGATION */
 ul {
     list-style-type: none;
     margin: 0;
@@ -42,27 +41,24 @@ li {
 li:last-child {
     border-right: none;
     border-left: 1px solid #bbb;
+    background-color: black;
 }
 
-/*FORMULAIRE*/
 
-table{
-  margin: auto;
-  border-spacing: 20px 28px;
-  font-family: elephant;
-}
-td {
-  text-align: left;
-  font-family: elephant;
-  font-size: 20px;
-  font-style: bold;
-
-}
-a{
-text-decoration: none;
+footer {
+  background-color: black;
+  color: #FE2EF7;;
+  position: absolute;
+  bottom: 0px;
+  width: 98%;
+  text-align: right;
 }
 
 li.pan{
 float: right;
 border-left: 1px solid #bbb;
+}
+h2{
+    color: #FE2EF7;
+    text-align: center;
 }

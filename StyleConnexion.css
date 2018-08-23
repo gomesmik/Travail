@@ -9,9 +9,8 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: black ;/*#333*/
     width: 100%;
-
+    font-size: 15px;
 }
 
 li {
@@ -77,4 +76,11 @@ table {
 li.pan{
 float: right;
 border-left: 1px solid #bbb;
+}
+*{
+  font-family: elephant;
+  color: #FE2EF7;
+}
+input{
+  color:black;
 }

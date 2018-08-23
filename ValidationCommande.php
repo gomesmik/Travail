@@ -92,13 +92,13 @@
 $prixhyper = 0;
 $prixmagista = 0;
 $prixtiempo = 0;
-if(isset($_SESSION['magprice'])){
+if(isset($_SESSION['magprice'], $_SESSION["magquantite"])){
 $prixmagista = $_SESSION['magprice'] * $_SESSION["magquantite"];
 $prixmagista = number_format($prixmagista, 2 );}
-if(isset($_SESSION['price'])){
+if(isset($_SESSION['price'], $_SESSION["quantite"])){
 $prixtiempo = $_SESSION['price'] * $_SESSION['quantite'];
 $prixtiempo = number_format($prixtiempo, 2 );}
-if(isset($_SESSION['hypprice'])){
+if(isset($_SESSION['hypprice'], $_SESSION["hypquantite"])){
 $prixhyper = $_SESSION['hypprice'] * $_SESSION['hypquantite'];
 $prixhyper = number_format($prixhyper, 2 );}
 $totalmagtiemp = $prixmagista + $prixtiempo;

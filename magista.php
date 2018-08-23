@@ -86,8 +86,15 @@ $_SESSION["magprice"] = $donneesDeClients['prix'];
     </br>
     Livraison offerte
   </fieldset>
-  </br>
-  </br>
+  <span>
+    </br>
+
+    <?php
+
+  echo $_SESSION['magprice'] . " CHF";
+    ?>
+  </span>
+
 
 
 </div>

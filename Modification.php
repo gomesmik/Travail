@@ -22,11 +22,20 @@ $req = $bdd->prepare("UPDATE client SET Nom = :nam, Prenom = :prenom, Adresse = 
   $req->bindParam(':email', $email, PDO::PARAM_STR);
   $req->bindParam(':sexe', $sexe, PDO::PARAM_STR);
   $req->execute();
+
+  $nEnregistrements = $req->rowCount();
+  if ($nEnregistrements == 0) {
   ?>
-  <script>alert('Vos données ont bien été modifiée')</script>
+  <script>alert("il n'y a pas eu de modification !")</script>
   <?php
   echo "<meta http-equiv='refresh' content='0;url=Bienvenue.php'>";
 }
+  else{
+    ?>
+    <script>alert('Vos données ont bien été modifiée')</script>
+    <?php
+    echo "<meta http-equiv='refresh' content='0;url=Bienvenue.php'>";
+  }}
 ?>
 <!DOCTYPE html>
 <html>
@@ -129,7 +138,7 @@ $req = $bdd->prepare("UPDATE client SET Nom = :nam, Prenom = :prenom, Adresse = 
            <td></td>
            <td></td>
            <td></td>
-           <td><input type="submit" value="Se connecter" style="width:145px; height:30px"></td>
+           <td><input type="submit" value="Modifier" style="width:145px; height:30px"></td>
          </tr>
 
        </form>
@@ -142,26 +151,6 @@ $req = $bdd->prepare("UPDATE client SET Nom = :nam, Prenom = :prenom, Adresse = 
   		die("Erreur	" . $e->getMessage());
   	}
  ?>
-
-
-
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

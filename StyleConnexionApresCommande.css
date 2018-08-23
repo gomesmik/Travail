@@ -15,7 +15,7 @@ ul {
     overflow: hidden;
     background-color: none ;
     width: 100%;
-
+    font-size: 15px;
 }
 
 li {
@@ -121,5 +121,3 @@ footer {
     line-height: 95px; /* hauteur de ligne (identique) */
     white-space: nowrap;  interdiction de passer à la ligne */
   }
-
-  

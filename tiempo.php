@@ -86,8 +86,15 @@ $_SESSION["price"] = $donneesDeClients['prix'];
     </br>
     Livraison offerte
   </fieldset>
-  </br>
-  </br>
+  <span>
+    </br>
+
+    <?php
+
+  echo $_SESSION['price'] . " CHF";
+    ?>
+  </span>
+
 
 
 </div>
