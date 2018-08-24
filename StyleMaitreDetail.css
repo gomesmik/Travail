@@ -50,3 +50,7 @@ li.pan{
 float: right;
 border-left: 1px solid #bbb;
 }
+div{
+  text-align: center;
+  font-size: 20px;
+}

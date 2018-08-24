@@ -31,6 +31,7 @@
   </ul>
 
 </header>
+<div>
 <?php
 try {
   $bdd = new PDO("mysql:host=localhost;dbname=travail", "root", "");
@@ -41,10 +42,9 @@ try {
   $requete = $stmt->fetchAll();
 
 
-  $req = $bdd->prepare('SELECT commande.ID_Commande, commande.ID_Client, commande.ID_Produit, client.ID, client.Nom, client.Prenom, produit.id, produit.marque, produit.description
+  $req = $bdd->prepare('SELECT commande.ID_Commande, commande.ID_Client, commande.ID_Produit, commande.ID_ProduitMag, commande.ID_ProduitTiemp, client.ID, client.Nom, client.Prenom, client.Nom, client.Email, client.Adresse, client.Telephone
     From commande
     INNER JOIN client on commande.ID_Client = client.ID
-    INNER JOIN produit on commande.ID_Produit = produit.id
     WHERE commande.ID_Commande = :IDCom AND client.ID = :IDCli');
 
   $req->bindParam(':IDCom', $_POST['com'], PDO::PARAM_INT);
@@ -53,10 +53,39 @@ try {
   while($user = $req->fetch(PDO::FETCH_ASSOC)){
     echo "Numéro de commande : " . $user['ID_Commande'];
     echo "</br>";
-    echo "Marque : " . $user['marque'];
-    echo "</br>";
-    echo "Descritpion Article : " . $user['description'];
-    echo "</br>";
+      echo "</br>";
+if(isset($user['ID_Produit'])){
+        ?>
+
+        <img src="images/crampons.png" alt="panier" height="150" width="200"></a>
+
+        <?php
+}
+if(isset($user['ID_ProduitTiemp'])){
+  ?>
+
+  <img src="images/crampons2.png" alt="magista" height="150" width="200"></a>
+
+  <?php
+}
+if(isset($user['ID_ProduitMag'])){
+  ?>
+
+  <img src="images/crampons3.png" alt="magista" height="150" width="200"></a>
+
+  <?php
+}
+echo "</br>";
+echo "_________________________________";
+echo "</br>";
+echo "Commandé par : " . $user['Prenom'] . " " . $user['Nom'] . "</br>";
+echo "Adresse : " . $user['Adresse'] . "</br>";
+echo "Email : " . $user['Email'] . "</br>";
+echo "Téléphone : " . $user['Telephone'] . "</br>"
+
+?>
+</div>
+<?php
   }
 }
   catch (PDOException $e)

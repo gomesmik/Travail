@@ -37,11 +37,7 @@ $cpt = 0;
 try {
   $bdd = new PDO("mysql:host=localhost;dbname=travail", "root", "");
   $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $req = $bdd->prepare('SELECT commande.ID_Commande, commande.ID_Client, commande.ID_Produit, client.ID, produit.id, produit.id, produit.marque, produit.description
-    From commande
-    INNER JOIN client on commande.ID_Client = client.ID
-    INNER JOIN produit on commande.ID_Produit = produit.id
-    WHERE commande.ID_Client = :IDClient');
+  $req = $bdd->prepare('SELECT * from commande WHERE commande.ID_Client = :IDClient');
   $req->bindParam(':IDClient', $_SESSION['ID'], PDO::PARAM_INT);
   $req->execute(); /*OBLIGATOIRE AVEC LE BINDPARAM */
   while($user = $req->fetch(PDO::FETCH_ASSOC)){
