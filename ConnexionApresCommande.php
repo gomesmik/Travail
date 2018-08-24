@@ -58,16 +58,20 @@
 			$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Duplace entry management
 
 
-			$sql = $bdd->prepare("SELECT Login, MotDePasse FROM client WHERE Login = :uname");
+			$sql = $bdd->prepare("SELECT ID, Login, MotDePasse FROM client WHERE Login = :uname");
 			$sql->bindParam(':uname', $uname, PDO::PARAM_STR);
 			$sql->execute();
 
 			$user = $sql->fetch(PDO::FETCH_ASSOC);
 			if (password_verify($pswrd,$user['MotDePasse'])) { // Check strong encoded password
-
         $nam = $_POST['login'];
         $_SESSION['login'] = $nam;
-
+        if(isset($_SESSION['ID'])){
+          "";
+        }
+        else{
+          $_SESSION['ID'] = $user['ID'];
+        }
 				echo "<meta http-equiv='refresh' content='1;url=ValidationCommande.php'>";
 				$submt = "Logging in progres...";
 			}

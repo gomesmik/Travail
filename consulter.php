@@ -4,7 +4,7 @@
 <html>
 <head>
   <title>Mik'Shop</title>
-  <link rel="stylesheet" href="StyleConfirmationCommande.css"/>
+  <link rel="stylesheet" href="StyleConsulter.css"/>
   <meta charset="UTF-8">
 </head>
 
@@ -14,6 +14,7 @@
     <li><a href="Index.php">Home</a></li>
     <li><a href="produit.php">Produit</a></li>
     <li><a href="contact.php">Contact</a></li>
+    <li class="pan"><a href="panier.php" style="float:right"><img src="images/panier.png" alt="panier" height="15" width="20"></a></li>
     <li style="float:right">
 			<?php
 	    if(isset($_SESSION['login']))
@@ -30,29 +31,38 @@
   </ul>
 
 </header>
-
-
+<div>
 <?php
+$cpt = 0;
 try {
   $bdd = new PDO("mysql:host=localhost;dbname=travail", "root", "");
   $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $req = $bdd->prepare('INSERT INTO commande (ID_Client, ID_Produit) VALUES (:IDClient, :IDProduit)');
+  $req = $bdd->prepare('SELECT commande.ID_Commande, commande.ID_Client, commande.ID_Produit, client.ID, produit.id, produit.id, produit.marque, produit.description
+    From commande
+    INNER JOIN client on commande.ID_Client = client.ID
+    INNER JOIN produit on commande.ID_Produit = produit.id
+    WHERE commande.ID_Client = :IDClient');
   $req->bindParam(':IDClient', $_SESSION['ID'], PDO::PARAM_INT);
-  $req->bindParam(':IDProduit', $_SESSION['hyperid'], PDO::PARAM_INT);
   $req->execute(); /*OBLIGATOIRE AVEC LE BINDPARAM */
+  while($user = $req->fetch(PDO::FETCH_ASSOC)){
+    echo $user['ID_Commande'] . " ". $user['marque'] . " ". $user['description'];
+    echo "</br>";
+    $cpt = $cpt + 1;
+  }
 
-  echo 'Merci pour votre commande !';
+echo "Vous avez effectué " . $cpt . " commande !";
 
-  $stmt = $bdd->prepare('INSERT INTO ligne_commande (quantite) VALUES (:quantite)');
-  $stmt->bindParam(':quantite', $_SESSION['hypquantite'], PDO::PARAM_INT);
-  $stmt->execute();
+
 }
 catch (PDOException $e)
  {
   echo "Erreur";
  }
 
-
 ?>
+</div>
+
+
+
 </body>
 </html>

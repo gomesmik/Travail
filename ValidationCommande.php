@@ -31,6 +31,7 @@
 
 </header>
 
+
 <div id="left">
   <h3>Données du client</h3>
   <table>
@@ -38,6 +39,7 @@
       <td>Prenom :</td>
 
   <?php
+
   try
   {
     $bdd = new PDO("mysql:host=localhost;dbname=travail", "root", ""); // Create DB connection
