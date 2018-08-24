@@ -36,15 +36,70 @@
 try {
   $bdd = new PDO("mysql:host=localhost;dbname=travail", "root", "");
   $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $req = $bdd->prepare('INSERT INTO commande (ID_Client, ID_Produit) VALUES (:IDClient, :IDProduit)');
+
+  if(isset($_SESSION['hyperid'], $_SESSION['magid'], $_SESSION['tiempoid'])){
+  $req = $bdd->prepare('INSERT INTO commande (ID_Client, ID_Produit, ID_ProduitMag, ID_ProduitTiemp) VALUES (:IDClient, :IDProduit, :IDProduitMag, :IDProduitTiemp)');
   $req->bindParam(':IDClient', $_SESSION['ID'], PDO::PARAM_INT);
   $req->bindParam(':IDProduit', $_SESSION['hyperid'], PDO::PARAM_INT);
-  $req->execute(); /*OBLIGATOIRE AVEC LE BINDPARAM */
+  $req->bindParam(':IDProduitMag', $_SESSION['magid'], PDO::PARAM_INT);
+  $req->bindParam(':IDProduitTiemp', $_SESSION['tiempoid'], PDO::PARAM_INT);
+  $req->execute();
+  }
+  elseif (isset($_SESSION['hyperid'], $_SESSION['magid'])){
+    $req = $bdd->prepare('INSERT INTO commande (ID_Client, ID_Produit, ID_ProduitMag) VALUES (:IDClient, :IDProduit, :IDProduitMag)');
+    $req->bindParam(':IDClient', $_SESSION['ID'], PDO::PARAM_INT);
+    $req->bindParam(':IDProduit', $_SESSION['hyperid'], PDO::PARAM_INT);
+    $req->bindParam(':IDProduitMag', $_SESSION['magid'], PDO::PARAM_INT);
+    $req->execute();
+  }
+  elseif (isset($_SESSION['hyperid'], $_SESSION['tiempoid'])){
+    $req = $bdd->prepare('INSERT INTO commande (ID_Client, ID_Produit, ID_ProduitTiemp) VALUES (:IDClient, :IDProduit, :ID_ProduitTiemp)');
+    $req->bindParam(':IDClient', $_SESSION['ID'], PDO::PARAM_INT);
+    $req->bindParam(':IDProduit', $_SESSION['hyperid'], PDO::PARAM_INT);
+    $req->bindParam(':ID_ProduitTiemp', $_SESSION['tiempoid'], PDO::PARAM_INT);
+    $req->execute();
+  }
+  elseif (isset($_SESSION['tiempoid'], $_SESSION['magid'])){
+    $req = $bdd->prepare('INSERT INTO commande (ID_Client, ID_ProduitMag, ID_ProduitTiemp) VALUES (:IDClient, :IDProduitMag, :IDProduitTiemp)');
+    $req->bindParam(':IDClient', $_SESSION['ID'], PDO::PARAM_INT);
+    $req->bindParam(':IDProduitMag', $_SESSION['magid'], PDO::PARAM_INT);
+    $req->bindParam(':IDProduitTiemp', $_SESSION['tiempoid'], PDO::PARAM_INT);
+    $req->execute();
+  }
+  elseif (isset($_SESSION['hyperid'])){
+    $req = $bdd->prepare('INSERT INTO commande (ID_Client, ID_Produit) VALUES (:IDClient, :IDProduit)');
+    $req->bindParam(':IDClient', $_SESSION['ID'], PDO::PARAM_INT);
+    $req->bindParam(':IDProduit', $_SESSION['hyperid'], PDO::PARAM_INT);
+    $req->execute();
+  }
+  elseif (isset($_SESSION['magid'])){
+    $req = $bdd->prepare('INSERT INTO commande (ID_Client, ID_ProduitMag) VALUES (:IDClient, :IDProduitMag)');
+    $req->bindParam(':IDClient', $_SESSION['ID'], PDO::PARAM_INT);
+    $req->bindParam(':IDProduitMag', $_SESSION['magid'], PDO::PARAM_INT);
+    $req->execute();
 
-  echo 'Merci pour votre commande !';
+  }
+  elseif (isset($_SESSION['tiempoid'])){
+    $req = $bdd->prepare('INSERT INTO commande (ID_Client, ID_ProduitTiemp) VALUES (:IDClient, :ID_ProduitTiemp)');
+    $req->bindParam(':IDClient', $_SESSION['ID'], PDO::PARAM_INT);
+    $req->bindParam(':ID_ProduitTiemp', $_SESSION['tiempoid'], PDO::PARAM_INT);
+    $req->execute();
+  }
+  ?>
+  <div>
+    <?php
+  echo 'Merci pour votre commande !' . "</br>";
+  echo 'Vous pouvez maintenant avoir accès au détail de la commande sur votre compte';
 
-  $stmt = $bdd->prepare('INSERT INTO ligne_commande (quantite) VALUES (:quantite)');
+  ?>
+
+</div>
+    <?php
+
+  $stmt = $bdd->prepare('INSERT INTO ligne_commande (ID_Commande, ID_Produit, quantite) VALUES (:quantite, :ID_Commande, :ID_Produit)');
   $stmt->bindParam(':quantite', $_SESSION['hypquantite'], PDO::PARAM_INT);
+  $stmt->bindParam(':ID_Commande', $_SESSION['hypquantite'], PDO::PARAM_INT);
+  $stmt->bindParam(':ID_Produit', $_SESSION['hypquantite'], PDO::PARAM_INT);
   $stmt->execute();
 }
 catch (PDOException $e)
@@ -54,5 +109,8 @@ catch (PDOException $e)
 
 
 ?>
+<p>
+  <img src="images/merci.png" alt="panier" height="300" width="300" class="merci">
+</p>
 </body>
 </html>

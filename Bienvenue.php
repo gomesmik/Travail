@@ -131,11 +131,13 @@ $women = "Femme";
 
 	</section>
 	<aside>
-
-		<a href="desabonner.php"><div class="desabo">Se désabonner</div> </a>
-		<a href="Consulter.php"><div class="desabo">Consulter ces commandes</div> </a>
-		<a href="Modification.php"><div>Modifier mes données personnelles</div></a>
-		<a href="Consultermsg.php"><div class="desabottom">Consulter mes messages envoyé</div> </a>
+</br>
+		<a href="desabonner.php"><div class="desabo">Se désabonner</div> </a></br>
+		<a href="Consulter.php"><div class="desabo">Consulter ces commandes</div> </a></br>
+		<a href="Modification.php"><div>Modifier mes données personnelles</div></a></br>
+</br>
+</br>
+</br>
 		<span>
 			<a href="deconnexion.php">Déconnexion</a>
 		</span>

@@ -43,6 +43,7 @@ $reponseDeClients = $bdd->query("SELECT * FROM produit WHERE id =  $dx");
 $reponseDeClients->setFetchMode(PDO::FETCH_BOTH);
 
 while ($donneesDeClients = $reponseDeClients->fetch() ) {
+$_SESSION["magid"] = $donneesDeClients['id'];
 $_SESSION["magdescr"] = $donneesDeClients['description'];
 $_SESSION["magmarque"] = $donneesDeClients['marque'];
 $_SESSION["magprice"] = $donneesDeClients['prix'];

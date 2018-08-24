@@ -45,11 +45,15 @@ li:last-child {
 }
 
 
-footer {
-  background-color: black;
-  color: #FE2EF7;;
-  position: absolute;
-  bottom: 0px;
-  width: 98%;
-  text-align: right;
+div{
+  font-size: 20px;
+  text-align: center;
+}
+
+.merci{
+  margin-top: 70px;
+}
+p{
+  align: center;
+  text-align: center;
 }

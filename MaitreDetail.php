@@ -4,7 +4,7 @@
 <html>
 <head>
   <title>Mik'Shop</title>
-  <link rel="stylesheet" href="StyleConsulter.css"/>
+  <link rel="stylesheet" href="StyleMaitreDetail.css"/>
   <meta charset="UTF-8">
 </head>
 
@@ -31,70 +31,38 @@
   </ul>
 
 </header>
-<div class="right">
 <?php
-$cpt = 0;
 try {
   $bdd = new PDO("mysql:host=localhost;dbname=travail", "root", "");
   $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $req = $bdd->prepare('SELECT commande.ID_Commande, commande.ID_Client, commande.ID_Produit, client.ID, produit.id, produit.id, produit.marque, produit.description
+  $stmt = $bdd->prepare('SELECT commande.ID_Client from commande WHERE commande.ID_Client = :cliID');
+  $stmt->bindParam(':cliID', $_SESSION['ID'], PDO::PARAM_INT);
+  $stmt->execute();
+  $requete = $stmt->fetchAll();
+
+
+  $req = $bdd->prepare('SELECT commande.ID_Commande, commande.ID_Client, commande.ID_Produit, client.ID, client.Nom, client.Prenom, produit.id, produit.marque, produit.description
     From commande
     INNER JOIN client on commande.ID_Client = client.ID
     INNER JOIN produit on commande.ID_Produit = produit.id
-    WHERE commande.ID_Client = :IDClient');
-  $req->bindParam(':IDClient', $_SESSION['ID'], PDO::PARAM_INT);
+    WHERE commande.ID_Commande = :IDCom AND client.ID = :IDCli');
+
+  $req->bindParam(':IDCom', $_POST['com'], PDO::PARAM_INT);
+  $req->bindParam(':IDCli', $_SESSION['ID'], PDO::PARAM_INT);
   $req->execute(); /*OBLIGATOIRE AVEC LE BINDPARAM */
   while($user = $req->fetch(PDO::FETCH_ASSOC)){
-    ?>
-    <table>
-      <tr>
-    <?php
-    echo "<td>" . "Numéro de commande : " . $user['ID_Commande']  . "</td>";
+    echo "Numéro de commande : " . $user['ID_Commande'];
     echo "</br>";
-    ?>
-  </tr>
-</table>
-    <?php
-    $cpt = $cpt + 1;
+    echo "Marque : " . $user['marque'];
+    echo "</br>";
+    echo "Descritpion Article : " . $user['description'];
+    echo "</br>";
   }
-
-
 }
-catch (PDOException $e)
- {
-  echo "Erreur";
- }
-
+  catch (PDOException $e)
+   {
+    echo "Erreur";
+   }
 ?>
-</div>
-
-<div class="left">
-  <?php
-echo "Vous avez effectué " . $cpt . " commande(s) !";
-
-if($cpt == 0) {
-  "";
-}
-else{
-  ?>
-  </br>
-  </br>
-  </br>
-  <?php
-  echo "Afficher le détail de la commande n° ";
-}
-  ?>
-  </br>
-  <FORM METHOD='POST' ACTION='MaitreDetail.php'>
-      </br>
-         <input name="com" type="number" min="0" step="1" required>
-    </br>
-    </br>
-       <input type="submit" value="Afficher" style="width:200px; height:30px">
-  </FORM>
-</div>
-
-
-
 </body>
 </html>

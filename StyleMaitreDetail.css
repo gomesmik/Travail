@@ -3,7 +3,7 @@
   color: #FE2EF7;
 }
 body {
-     background-image: url("images/apresCommande.jpg");
+     background-image: url("images/MaitreDetail.jpg");
      background-size: cover;
 }
 
@@ -42,7 +42,6 @@ li {
 li:last-child {
     border-right: none;
     border-left: 1px solid #bbb;
-    background-color: black;
 }
 
 
@@ -50,21 +49,4 @@ li:last-child {
 li.pan{
 float: right;
 border-left: 1px solid #bbb;
-}
-
-.right{
-  weight: 500px;
-  text-align:center;
-  float: left;
-  margin-left: 200px;
-}
-.left{
-  weight: 500px;
-  text-align:center;
-  float: right;
-  margin-right: 200px;
-}
-form, input{
-  text-align: center;
-  color: black;
 }

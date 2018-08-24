@@ -43,6 +43,7 @@ $reponseDeClients = $bdd->query("SELECT * FROM produit WHERE id =  $trx");
 $reponseDeClients->setFetchMode(PDO::FETCH_BOTH);
 
 while ($donneesDeClients = $reponseDeClients->fetch() ) {
+$_SESSION["tiempoid"] = $donneesDeClients['id'];
 $_SESSION["tiempodescr"] = $donneesDeClients['description'];
 $_SESSION["marque"] = $donneesDeClients['marque'];
 $_SESSION["price"] = $donneesDeClients['prix'];

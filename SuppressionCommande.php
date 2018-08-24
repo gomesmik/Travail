@@ -38,10 +38,27 @@ try
   $bdd = new PDO("mysql:host=localhost;dbname=travail", "root", ""); // Create DB connection
   $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Duplace entry management
 
-  $req = $bdd->prepare("DELETE FROM client WHERE Login = '$nam'");
+  $req = $bdd->prepare('SELECT commande.ID_Commande, commande.ID_Client, commande.ID_Produit, client.ID, client.Nom, client.Prenom, produit.id, produit.marque, produit.description
+    From commande
+    INNER JOIN client on commande.ID_Client = client.ID
+    INNER JOIN produit on commande.ID_Produit = produit.id
+    WHERE  client.ID = :IDCli');
+  $req->bindParam(':IDCli', $_SESSION['ID'], PDO::PARAM_INT);
+  $req->execute(); /*OBLIGATOIRE AVEC LE BINDPARAM */
+  while($user = $req->fetch(PDO::FETCH_ASSOC)){
+    echo "Numéro de commande : " . $user['ID_Commande'];
+    echo "</br>";
+    echo "Marque : " . $user['marque'];
+    echo "</br>";
+    echo "Descritpion Article : " . $user['description'];
+    echo "</br>";
+  }
+
+  $req = $bdd->prepare("DELETE FROM commande WHERE ID_Client = :idcli");
+  $req->bindParam(':idcli', $_SESSION['ID'], PDO::PARAM_INT);
   $req->execute();
 
-  echo "<meta http-equiv='refresh' content='0;url=index.php'>";
+  echo "<meta http-equiv='refresh' content='0;url=consulter.php'>";
 
   unset($_SESSION['login']);
   ?>
