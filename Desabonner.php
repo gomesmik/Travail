@@ -4,14 +4,14 @@
 <html>
 <head>
   <title>Mik'Shop</title>
-  <link rel="stylesheet" href="StyleDesabonner.css"/>
+  <link rel="stylesheet" href="styledesabonner.css"/>
   <meta charset="UTF-8">
 </head>
 
 <body>
 <header>
   <ul>
-    <li><a href="Index.php">Home</a></li>
+    <li><a href="index.php">Home</a></li>
     <li><a href="produit.php">Produit</a></li>
     <li><a href="contact.php">Contact</a></li>
     <li style="float:right">
@@ -19,7 +19,7 @@
 	    if(isset($_SESSION['login']))
 			{
 		     $nam = $_SESSION['login'];
-	       echo '<a href="Bienvenue.php">'. $nam . '</a>';
+	       echo '<a href="bienvenue.php">'. $nam . '</a>';
 	    }
 	    else
 	    {
@@ -34,10 +34,10 @@
 <h1>Etes-Vous sur de vouloir vous désabonner ?</h1>
 
 <div class="Non">
-    <a href="Bienvenue.php">Non</a>
+    <a href="bienvenue.php">Non</a>
 </div>
 <div class="Oui">
-  <a href="DonneeDesabonnement.php">Oui</a>
+  <a href="donneedesabonnement.php">Oui</a>
 </div>
 
 </body>

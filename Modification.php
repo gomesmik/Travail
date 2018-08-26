@@ -3,7 +3,7 @@ session_start();
 $nam = $_SESSION['login'];
 try
 {
-  $bdd = new PDO("mysql:host=localhost;dbname=travail", "root", ""); // Create DB connection
+	$bdd = new PDO("mysql:host=hhva.myd.infomaniak.com;dbname=hhva_michaelgms", "hhva_michaelgms", "yxt7TjYiLK");  // Create DB connection
   $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Duplace entry management
 
   if (!empty($_POST)) { // Data exist
@@ -28,27 +28,27 @@ $req = $bdd->prepare("UPDATE client SET Nom = :nam, Prenom = :prenom, Adresse = 
   ?>
   <script>alert("il n'y a pas eu de modification !")</script>
   <?php
-  echo "<meta http-equiv='refresh' content='0;url=Bienvenue.php'>";
+  echo "<meta http-equiv='refresh' content='0;url=bienvenue.php'>";
 }
   else{
     ?>
     <script>alert('Vos données ont bien été modifiée')</script>
     <?php
-    echo "<meta http-equiv='refresh' content='0;url=Bienvenue.php'>";
+    echo "<meta http-equiv='refresh' content='0;url=bienvenue.php'>";
   }}
 ?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>Modification de données</title>
-  <link rel="stylesheet" href="StyleModification.css"/>
+  <link rel="stylesheet" href="stylemodification.css"/>
   <meta charset="UTF-8">
 </head>
 
 <body>
 <header>
   <ul>
-    <li><a href="Index.php">Home</a></li>
+    <li><a href="index.php">Home</a></li>
     <li><a href="produit.php">Produit</a></li>
     <li><a href="contact.php">Contact</a></li>
     <li class="pan"><a href="panier.php" style="float:right"><img src="images/panier.png" alt="panier" height="15" width="20"></a></li>
@@ -57,7 +57,7 @@ $req = $bdd->prepare("UPDATE client SET Nom = :nam, Prenom = :prenom, Adresse = 
 	    if(isset($_SESSION['login']))
 			{
 
-	       echo '<a href="Bienvenue.php">'. $nam . '</a>';
+	       echo '<a href="bienvenue.php">'. $nam . '</a>';
 	    }
 	    else
 	    {
@@ -78,7 +78,7 @@ $req = $bdd->prepare("UPDATE client SET Nom = :nam, Prenom = :prenom, Adresse = 
     {
       ?>
       <table>
-        <form method="post" action="Modification.php">
+        <form method="post" action="modification.php">
          <tr>
              <td>Nom :</td>
              <td><input name="nom" type="text"  required value="<?php echo $donneesDeClients['Nom']?>"></td>

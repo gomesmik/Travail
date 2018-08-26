@@ -4,14 +4,14 @@
 <html>
 <head>
   <title>Mik'Shop</title>
-  <link rel="stylesheet" href="StyleValidationCommande.css"/>
+  <link rel="stylesheet" href="stylevalidationcommande.css"/>
   <meta charset="UTF-8">
 </head>
 
 <body>
 <header>
   <ul>
-    <li><a href="Index.php">Home</a></li>
+    <li><a href="index.php">Home</a></li>
     <li><a href="produit.php">Produit</a></li>
     <li><a href="contact.php">Contact</a></li>
     <li style="float:right">
@@ -19,7 +19,7 @@
 	    if(isset($_SESSION['login']))
 			{
 		     $nam = $_SESSION['login'];
-	       echo '<a href="Bienvenue.php">'. $nam . '</a>';
+	       echo '<a href="bienvenue.php">'. $nam . '</a>';
 	    }
 	    else
 	    {
@@ -42,7 +42,7 @@
 
   try
   {
-    $bdd = new PDO("mysql:host=localhost;dbname=travail", "root", ""); // Create DB connection
+  	$bdd = new PDO("mysql:host=hhva.myd.infomaniak.com;dbname=hhva_michaelgms", "hhva_michaelgms", "yxt7TjYiLK");  // Create DB connection
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Duplace entry management
     $reponseDeClients = $bdd->query("SELECT * FROM client WHERE Login = '$nam'");
     $reponseDeClients->setFetchMode(PDO::FETCH_BOTH);
@@ -72,7 +72,7 @@
 </br>
 </br>
 </br>
-  <a href="Modification.php"><i>Si des données sont fausses cliqué ici !</i></a>
+  <a href="modification.php"><i>Si des données sont fausses cliqué ici !</i></a>
 </div>
 
 <div id="right">
@@ -165,7 +165,7 @@ elseif(isset($_SESSION['magtaille'], $_SESSION['magquantite'])){
 </div>
 
 <div class="valider">
-    <a href="ConfirmationCommande.php">Valider la commande</a>
+    <a href="confirmationcommande.php">Valider la commande</a>
 </div>
 <div class="retour">
   <a href="panier.php">Retour au panier</a>

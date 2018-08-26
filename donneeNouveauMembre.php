@@ -23,7 +23,6 @@ if (!empty($_POST['nom'])) {
 
                    try {
                	     $conn = new PDO("mysql:host=localhost;dbname=travail", "root", "");
-               	     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
                      /*Creation du compte*/
@@ -66,7 +65,7 @@ if (!empty($_POST['nom'])) {
 
                  		if ($insertion)
                       {
-                         echo "<p>Votre compte à été créer avec succès !</p>";
+                         echo "<p>Votre compte a été crée avec succès !</p>";
                    		   echo "<meta http-equiv='refresh' content='4;url=connexion.php'>";
                  		      $submt = "Registering in progres...";
                  		  }

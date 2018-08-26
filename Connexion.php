@@ -2,18 +2,18 @@
 <html>
   <head>
     <title>Mik'Shop</title>
-    <link rel="stylesheet" href="StyleConnexion.css"/>
+    <link rel="stylesheet" href="styleconnexion.css"/>
     <meta charset="UTF-8">
   </head>
 
     <body>
       <header>
         <ul>
-            <li><a href="Index.php">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="produit.php">Produit</a></li>
             <li><a href="contact.php">Contact</a></li>
             <li class="pan"><a href="panier.php" style="float:right"><img src="images/panier.png" alt="panier" height="15" width="20"></a></li>
-            <li style="float:right"><a class="active" href="Connexion.php">Connexion</a></li>
+            <li style="float:right"><a class="active" href="connexion.php">Connexion</a></li>
         </ul>
       </header>
           <main>
@@ -21,7 +21,7 @@
                 <center>
                 <h2>Connectez-vous ! </h2>
                 <p>
-                  <FORM METHOD='POST' ACTION='Connexion.php'>
+                  <FORM METHOD='POST' ACTION='connexion.php'>
                       <table>
                         <tr>
           					     <td> Login :<input name="login" type="text" required></td>
@@ -32,7 +32,6 @@
                        <input type="submit" value="Se connecter" style="width:200px; height:30px">
           				</FORM>
               </p>
-              <a href="MotDePasseOublie.php"><u>Mot de passe ou login oublié</u></a>
             </center>
           		</section>
               <br>
@@ -40,7 +39,7 @@
               <article>
                   <h2>Nouveau client </h2>
                   <p>
-                    <a href="NouveauMembre.php" title="newCompte">
+                    <a href="nouveaumembre.php" title="newCompte">
                     <input type="submit" value="Créer un compte" style="width:200px; height:50px;"></a>
                   </p>
               </article>
@@ -61,7 +60,7 @@
 
 
 		try {
-			$bdd = new PDO("mysql:host=localhost;dbname=travail", "root", ""); // Create DB connection
+			$bdd = new PDO("mysql:host=hhva.myd.infomaniak.com;dbname=hhva_michaelgms", "hhva_michaelgms", "yxt7TjYiLK");  // Create DB connection
 			$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Duplace entry management
 			$sql = $bdd->prepare("SELECT ID, Login, MotDePasse FROM client WHERE Login = :uname");
 			$sql->bindParam(':uname', $uname, PDO::PARAM_STR);
@@ -71,7 +70,7 @@
         $nam = $_POST['login'];
         $_SESSION['login'] = $nam;// session
         $_SESSION['ID'] = $user['ID'];
-        echo "<meta http-equiv='refresh' content='1;url=Bienvenue.php'>";
+        echo "<meta http-equiv='refresh' content='1;url=bienvenue.php'>";
 				$submt = "Logging in progres...";
 			}
 			else {

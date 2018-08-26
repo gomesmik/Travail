@@ -1,20 +1,20 @@
 <head>
   <title>Mik'Shop</title>
-  <link rel="stylesheet" href="StyleContact.css"/>
+  <link rel="stylesheet" href="stylecontact.css"/>
   <meta charset="UTF-8">
 </head>
 
 <body>
 <header>
   <ul>
-    <li><a href="Index.php">Home</a></li>
+    <li><a href="index.php">Home</a></li>
     <li><a href="produit.php">Produit</a></li>
     <li><a href="contact.php">Contact</a></li>
     <li class="pan"><a href="panier.php" style="float:right"><img src="images/panier.png" alt="panier" height="15" width="20"></a></li>
     <li style="float:right"><?php
     if(isset($_SESSION['login']))  {
 	     $nam = $_SESSION['login'];
-       echo '<a href="Bienvenue.php">'. $nam . '</a>';
+       echo '<a href="bienvenue.php">'. $nam . '</a>';
     }
     else
     {
@@ -35,8 +35,8 @@ if (!empty($_POST['prenom'])){
 
 
     try {
-                    $conn = new PDO("mysql:host=localhost;dbname=travail", "root", "");
-                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			              $bdd = new PDO("mysql:host=hhva.myd.infomaniak.com;dbname=hhva_michaelgms", "hhva_michaelgms", "yxt7TjYiLK");
+
 
 
                     /*Inssertion message*/
@@ -47,7 +47,7 @@ if (!empty($_POST['prenom'])){
                    $objet = (htmlentities($_POST['objet']))?filter_var($_POST['objet'],FILTER_SANITIZE_STRING):"";
                    $msg = (htmlentities($_POST['msg']))?filter_var($_POST['msg'],FILTER_SANITIZE_STRING):"";
 
-                   $stmt = $conn->prepare("INSERT INTO message (Prenom, Nom, Mail, Objet, Message) VALUES (:Prenom, :Nom, :Mail, :Objet, :Message)");
+                   $stmt = $bdd->prepare("INSERT INTO message (Prenom, Nom, Mail, Objet, Message) VALUES (:Prenom, :Nom, :Mail, :Objet, :Message)");
                    $stmt->bindParam(':Prenom', $prenom, PDO::PARAM_STR);
                    $stmt->bindParam(':Nom', $nom, PDO::PARAM_STR);
                    $stmt->bindParam(':Mail', $mail, PDO::PARAM_STR);

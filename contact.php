@@ -5,21 +5,21 @@ session_start();
 <html>
 <head>
   <title>Mik'Shop</title>
-  <link rel="stylesheet" href="StyleContact.css"/>
+  <link rel="stylesheet" href="stylecontact.css"/>
   <meta charset="UTF-8">
 </head>
 
 <body>
 <header>
   <ul>
-    <li><a href="Index.php">Home</a></li>
+    <li><a href="index.php">Home</a></li>
     <li><a href="produit.php">Produit</a></li>
     <li><a href="contact.php">Contact</a></li>
     <li class="pan"><a href="panier.php" style="float:right"><img src="images/panier.png" alt="panier" height="15" width="20"></a></li>
     <li style="float:right"><?php
     if(isset($_SESSION['login']))  {
 	     $nam = $_SESSION['login'];
-       echo '<a href="Bienvenue.php">'. $nam . '</a>';
+       echo '<a href="bienvenue.php">'. $nam . '</a>';
     }
     else
     {
@@ -33,7 +33,7 @@ session_start();
 		<aside>
 			<center><h2>Contactez-nous !</h2></center>
       <p>
-        <FORM METHOD='POST' ACTION='DonneeContact.php'>
+        <FORM METHOD='POST' ACTION='donneecontact.php'>
           <center>
 					      Prenom : <br>  <input name="prenom" type="text" required>  <br><br><br>
         				Nom :    <br>  <input name="nom" type "text" required>     <br><br><br>

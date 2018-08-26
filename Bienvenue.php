@@ -5,7 +5,7 @@
 <html>
 <head>
   <title>Mik'Shop</title>
-  <link rel="stylesheet" href="StyleBienvenue.css"/>
+  <link rel="stylesheet" href="stylebienvenue.css"/>
   <meta charset="UTF-8">
 </head>
 
@@ -13,11 +13,11 @@
 <header>
 
   <ul>
-    <li><a href="Index.php">Home</a></li>
+    <li><a href="index.php">Home</a></li>
     <li><a href="produit.php">Produit</a></li>
     <li><a href="contact.php">Contact</a></li>
 		<li class="pan"><a href="panier.php" style="float:right"><img src="images/panier.png" alt="panier" height="15" width="20"></a></li>
-    <li style="float:right"><a href="Bienvenue.php">
+    <li style="float:right"><a href="bienvenue.php">
 			<?php
 			if(isset($_SESSION['login']))  {
 	            echo $nam;
@@ -44,7 +44,7 @@ $women = "Femme";
 		$nome = "";
 		try
 		{
-			$bdd = new PDO("mysql:host=localhost;dbname=travail", "root", ""); // Create DB connection
+			$bdd = new PDO("mysql:host=hhva.myd.infomaniak.com;dbname=hhva_michaelgms", "hhva_michaelgms", "yxt7TjYiLK"); // Create DB connection
 			$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Duplace entry management
 			$reponseDeClients = $bdd->query("SELECT * FROM client WHERE Login = '$nam'");
 			$reponseDeClients->setFetchMode(PDO::FETCH_BOTH);
@@ -88,7 +88,7 @@ $women = "Femme";
 					}
 					else {
 						echo "</br>";
-						echo "<img src='images/femme.png' alt='Femme' title = 'Madame' style='width:200px;height:200px;''>";
+						echo "<img src='images/Femme.png' alt='Femme' title = 'Madame' style='width:200px;height:200px;''>";
 						?>
 
 							<p>
@@ -133,8 +133,8 @@ $women = "Femme";
 	<aside>
 </br>
 		<a href="desabonner.php"><div class="desabo">Se désabonner</div> </a></br>
-		<a href="Consulter.php"><div class="desabo">Mes commandes</div> </a></br>
-		<a href="Modification.php"><div>Modifier mes données personnelles</div></a></br>
+		<a href="consulter.php"><div class="desabo">Mes commandes</div> </a></br>
+		<a href="modification.php"><div class="desabo">Modifier mes données personnelles</div></a></br>
 </br>
 </br>
 </br>

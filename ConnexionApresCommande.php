@@ -4,14 +4,14 @@
 <html>
 <head>
   <title>Mik'Shop</title>
-  <link rel="stylesheet" href="StyleConnexionApresCommande.css"/>
+  <link rel="stylesheet" href="styleconnexionaprescommande.css"/>
   <meta charset="UTF-8">
 </head>
 
 <body>
 <header>
   <ul>
-    <li><a href="Index.php">Home</a></li>
+    <li><a href="index.php">Home</a></li>
     <li><a href="produit.php">Produit</a></li>
     <li><a href="contact.php">Contact</a></li>
     <li style="float:right">
@@ -19,8 +19,8 @@
   	    if(isset($_SESSION['login']))
   			{
   		     $nam = $_SESSION['login'];
-  	       echo '<a href="Bienvenue.php">'. $nam . '</a>';
-           echo "<meta http-equiv='refresh' content='0;url=ValidationCommande.php'>";
+  	       echo '<a href="bienvenue.php">'. $nam . '</a>';
+           echo "<meta http-equiv='refresh' content='0;url=validationcommande.php'>";
   	    }
 	    else
 	    {
@@ -32,7 +32,7 @@
 </header>
 <div id="left">
   <h3>Déjà client sur Mik'Shop ? Connectez-vous ! </h3>
-  <FORM METHOD='POST' ACTION='ConnexionApresCommande.php'>
+  <FORM METHOD='POST' ACTION='connexionaprescommande.php'>
       <table>
         <tr>
          <td> Login :<input name="login" type="text" required></td>
@@ -54,7 +54,7 @@
 
 
 		try {
-			$bdd = new PDO("mysql:host=localhost;dbname=travail", "root", ""); // Create DB connection
+			$bdd = new PDO("mysql:host=hhva.myd.infomaniak.com;dbname=hhva_michaelgms", "hhva_michaelgms", "yxt7TjYiLK");  // Create DB connection
 			$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Duplace entry management
 
 
@@ -72,7 +72,7 @@
         else{
           $_SESSION['ID'] = $user['ID'];
         }
-				echo "<meta http-equiv='refresh' content='1;url=ValidationCommande.php'>";
+				echo "<meta http-equiv='refresh' content='1;url=validationcommande.php'>";
 				$submt = "Logging in progres...";
 			}
 			else {
@@ -93,7 +93,7 @@
   </br>
 
     <div class="bouton">
-       <a href="NouveauMembre.php">continuer</a>
+       <a href="nouveaumembre.php">continuer</a>
     </div>
 </div>
 <div class="annuler">

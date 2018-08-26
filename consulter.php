@@ -4,14 +4,14 @@
 <html>
 <head>
   <title>Mik'Shop</title>
-  <link rel="stylesheet" href="StyleConsulter.css"/>
+  <link rel="stylesheet" href="styleconsulter.css"/>
   <meta charset="UTF-8">
 </head>
 
 <body>
 <header>
   <ul>
-    <li><a href="Index.php">Home</a></li>
+    <li><a href="index.php">Home</a></li>
     <li><a href="produit.php">Produit</a></li>
     <li><a href="contact.php">Contact</a></li>
     <li class="pan"><a href="panier.php" style="float:right"><img src="images/panier.png" alt="panier" height="15" width="20"></a></li>
@@ -20,7 +20,7 @@
 	    if(isset($_SESSION['login']))
 			{
 		     $nam = $_SESSION['login'];
-	       echo '<a href="Bienvenue.php">'. $nam . '</a>';
+	       echo '<a href="bienvenue.php">'. $nam . '</a>';
 	    }
 	    else
 	    {
@@ -35,7 +35,7 @@
 <?php
 $cpt = 0;
 try {
-  $bdd = new PDO("mysql:host=localhost;dbname=travail", "root", "");
+	$bdd = new PDO("mysql:host=hhva.myd.infomaniak.com;dbname=hhva_michaelgms", "hhva_michaelgms", "yxt7TjYiLK");
   $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $req = $bdd->prepare('SELECT * from commande WHERE commande.ID_Client = :IDClient');
   $req->bindParam(':IDClient', $_SESSION['ID'], PDO::PARAM_INT);
@@ -81,7 +81,7 @@ else{
 }
   ?>
   </br>
-  <FORM METHOD='POST' ACTION='MaitreDetail.php'>
+  <FORM METHOD='POST' ACTION='maitredetail.php'>
       </br>
          <input name="com" type="number" min="0" step="1" required>
     </br>

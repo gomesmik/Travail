@@ -4,14 +4,14 @@
 <html>
 <head>
   <title>Mik'Shop</title>
-  <link rel="stylesheet" href="StyleConfirmationCommande.css"/>
+  <link rel="stylesheet" href="styleconfirmationcommande.css"/>
   <meta charset="UTF-8">
 </head>
 
 <body>
 <header>
   <ul>
-    <li><a href="Index.php">Home</a></li>
+    <li><a href="index.php">Home</a></li>
     <li><a href="produit.php">Produit</a></li>
     <li><a href="contact.php">Contact</a></li>
     <li style="float:right">
@@ -19,7 +19,7 @@
 	    if(isset($_SESSION['login']))
 			{
 		     $nam = $_SESSION['login'];
-	       echo '<a href="Bienvenue.php">'. $nam . '</a>';
+	       echo '<a href="bienvenue.php">'. $nam . '</a>';
 	    }
 	    else
 	    {
@@ -34,7 +34,7 @@
 
 <?php
 try {
-  $bdd = new PDO("mysql:host=localhost;dbname=travail", "root", "");
+	$bdd = new PDO("mysql:host=hhva.myd.infomaniak.com;dbname=hhva_michaelgms", "hhva_michaelgms", "yxt7TjYiLK");
   $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   if(isset($_SESSION['hyperid'], $_SESSION['magid'], $_SESSION['tiempoid'])){
@@ -201,7 +201,7 @@ catch (PDOException $e)
 
 ?>
 <p>
-  <img src="images/merci.png" alt="panier" height="300" width="300" class="merci">
+  <img src="images/Merci.png" alt="panier" height="300" width="300" class="merci">
 </p>
 </body>
 </html>

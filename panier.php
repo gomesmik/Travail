@@ -28,14 +28,14 @@ else{
 <html>
 <head>
   <title>Mik'Shop</title>
-  <link rel="stylesheet" href="Stylepanier.css"/>
+  <link rel="stylesheet" href="stylepanier.css"/>
   <meta charset="UTF-8">
 </head>
 
 <body>
 <header>
   <ul>
-    <li><a href="Index.php">Home</a></li>
+    <li><a href="index.php">Home</a></li>
     <li><a href="produit.php">Produit</a></li>
     <li><a href="contact.php">Contact</a></li>
     <li style="float:right">
@@ -43,7 +43,7 @@ else{
 	    if(isset($_SESSION['login']))
 			{
 		     $nam = $_SESSION['login'];
-	       echo '<a href="Bienvenue.php">'. $nam . '</a>';
+	       echo '<a href="bienvenue.php">'. $nam . '</a>';
 	    }
 	    else
 	    {
@@ -72,7 +72,7 @@ else{
                  <td><?php echo $_SESSION['tiempodescr']; ?> </td>
                  <td><?php echo $_SESSION['quantite']; ?> </td>
                  <td><?php echo $vartiempo; ?> </td>
-                 <td><a href="supressionPanier.php"><img src="images/poubelle.png" alt="delete" height="15" width="20"></a></td>
+                 <td><a href="supressionpanier.php"><img src="images/poubelle.png" alt="delete" height="15" width="20"></a></td>
                  <?php
                  }
                else {
@@ -92,7 +92,7 @@ else{
          <td><?php echo $_SESSION['hypdescr']; ?> </td>
          <td><?php echo $_SESSION['hypquantite']; ?> </td>
          <td><?php echo $varhyper; ?> </td>
-         <td><a href="supressionPanier2.php"><img src="images/poubelle.png" alt="delete" height="15" width="20"></a></td>
+         <td><a href="supressionpanier2.php"><img src="images/poubelle.png" alt="delete" height="15" width="20"></a></td>
          <?php
          }
        else {
@@ -111,7 +111,7 @@ else{
          <td><?php echo $_SESSION['magdescr']; ?> </td>
          <td><?php echo $_SESSION['magquantite']; ?> </td>
          <td><?php echo $varmagista; ?> </td>
-         <td><a href="supressionPanier3.php"><img src="images/poubelle.png" alt="delete" height="15" width="20"></a></td>
+         <td><a href="supressionpanier3.php"><img src="images/poubelle.png" alt="delete" height="15" width="20"></a></td>
          <?php
          }
        else {
@@ -137,7 +137,7 @@ else{
               $totalmagista = $prixmagista;
               $totalmagista = number_format($totalmagista, 2);
               $total = $prixhyper + $prixtiempo + $prixmagista;
-              
+
 
               /*s'il achete tout*/
             if(isset($_SESSION['magtaille'], $_SESSION['magquantite'], $_SESSION['hyptaille'], $_SESSION['hypquantite'], $_SESSION['taille'], $_SESSION['quantite'])){
@@ -180,7 +180,7 @@ else{
 if(isset($_SESSION['magtaille']) || isset($_SESSION['hyptaille']) || isset($_SESSION['taille'])){
 ?>
   <div class="bouton">
-      <a href="ConnexionApresCommande.php">Commander</a>
+      <a href="connexionaprescommande.php">Commander</a>
 </div>
 <div class="continuer">
   <a href="produit.php">Continuer les achats</a>

@@ -3,7 +3,7 @@
 <html>
 <head>
   <title>Mik'Shop</title>
-  <link rel="stylesheet" href="StyleNew.css"/>
+  <link rel="stylesheet" href="stylenew.css"/>
   <meta charset="UTF-8">
 </head>
 
@@ -11,7 +11,7 @@
 <body>
 <header>
   <ul>
-    <li><a href="Index.html">Home</a></li>
+    <li><a href="index.php">Home</a></li>
     <li><a href="produit.php">Produit</a></li>
     <li><a href="contact.php">Contact</a></li>
     <li class="pan"><a href="panier.php" style="float:right"><img src="images/panier.png" alt="panier" height="15" width="20"></a></li>
@@ -21,7 +21,7 @@
 </header>
 <h1><u>Nouveau sur Mik'Shop ? Bienvenue !</u></h1>
 <table>
-  <form method="post" action="donneeNouveauMembre.php">
+  <form method="POST" action="donneenouveaumembre.php">
    <tr>
        <td>Nom :</td>
        <td><input name="nom" type="text" required></td>

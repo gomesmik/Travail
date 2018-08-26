@@ -7,14 +7,14 @@ $_SESSION['hypquantite'] = $_POST;*/
 <html>
 <head>
   <title>Mik'Shop</title>
-  <link rel="stylesheet" href="StyleHypervenom.css"/>
+  <link rel="stylesheet" href="stylehypervenom.css"/>
   <meta charset="UTF-8">
 </head>
 
 <body>
 <header>
   <ul>
-    <li><a href="Index.php">Home</a></li>
+    <li><a href="index.php">Home</a></li>
     <li><a href="produit.php">Produit</a></li>
     <li><a href="contact.php">Contact</a></li>
     <li class="pan"><a href="panier.php" style="float:right"><img src="images/panier.png" alt="panier" height="15" width="20"></a></li>
@@ -23,7 +23,7 @@ $_SESSION['hypquantite'] = $_POST;*/
 	    if(isset($_SESSION['login']))
 			{
 		     $nam = $_SESSION['login'];
-	       echo '<a href="Bienvenue.php">'. $nam . '</a>';
+	       echo '<a href="bienvenue.php">'. $nam . '</a>';
 	    }
 	    else
 	    {
@@ -37,7 +37,7 @@ $_SESSION['hypquantite'] = $_POST;*/
 <?php
 
 $dx = 2;
-$bdd = new PDO("mysql:host=localhost;dbname=travail", "root", ""); // Create DB connection
+$bdd = new PDO("mysql:host=hhva.myd.infomaniak.com;dbname=hhva_michaelgms", "hhva_michaelgms", "yxt7TjYiLK");  // Create DB connection
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Duplace entry management
 $reponseDeClients = $bdd->query("SELECT * FROM produit WHERE id =  $dx");
 $reponseDeClients->setFetchMode(PDO::FETCH_BOTH);
